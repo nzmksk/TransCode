@@ -1,0 +1,150 @@
+Data Types:
+JavaScript                                                              Python
+string                                                                  str
+number -> from -(2^53 - 1) to 2^53 - 1                                  int -> for whole numbers / float -> for decimals
+bigint -> for numbers outside the range specified above                 int -> for whole numbers / float -> for decimals
+-Infinity / Infinity                                                    ZeroDivisionError
+NaN -> complex numbers                                                  complex -> a + bi
+NaN -> operating numbers with non-numbers data type                     TypeError
+boolean -> true / false                                                 bool -> True / False
+null -> the value of no value                                           None
+undefined -> the absence of value                                       None
+array                                                                   range -> for numbers / list -> for items
+object                                                                  dict
+not available                                                           tuple
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Declaring Variables:
+JavaScript                                                              Python
+var <a> = <value>;                                                      <a> = <value>
+let <a> = <value>;                                                      <a> = <value>
+const <a> = <value>;                                                    <a> = <value>
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Variable Naming Convention:
+JavaScript                                                              Python
+variableName                                                            variable_name
+ClassName                                                               ClassName
+const CONSTANT_NAME;                                                    CONSTANT_NAME
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Comments:
+JavaScript                                                              Python
+// Single-line comment                                                  # Single-line and multi-line comments
+/* Multi-line comment */
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Operators:
+JavaScript                                                              Python
+Math.floor(a / b)                                                       a // b
+===                                                                     ==
+!==                                                                     !=
+== / !=                                                                 not available
+++ / --                                                                 not available
+&&                                                                      and
+||                                                                      or
+!                                                                       not
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Commands:
+JavaScript                                                              Python
+console.log(<output>) -> debug console                                  print(<output>)
+alert(<output>) -> display a small prompt on a browser                  not available
+typeof <instance>                                                       type(<instance>)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+If-Else Statements:
+JavaScript                                                              Python
+if (condition1) {                                                       if condition1:
+    // code;                                                                # code
+} else if (condition2) {                                                elif condition2:
+    // code;                                                                # code
+} else {                                                                else:
+    // code;                                                                # code
+}
+
+switch (expression) {                                                   not available
+    case value1:
+        // code;
+        break;
+    case value2:
+        // code;
+        break;
+    default:
+        // code;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Loops:
+JavaScript                                                              Python
+for (var/let i = 0; i < n; i++) {                                       for i in range(n):
+    // code;                                                                # code
+}
+
+
+for (var/let i of <iterable object>) {                                  for i in <iterable object>:
+    // code;                                                                # code
+} -> iterates over values
+
+// Example:
+for (let i of [4, 5, 6]) {
+    console.log(i); // logs "4", "5", "6"
+}
+
+
+for (var/let i in <iterable object>) {
+    // code;
+} -> iterates over properties
+
+// Example:
+for (let i in [4, 5, 6]) {
+    console.log(i); // logs "0", "1", "2"
+}
+
+
+while (condition) {                                                     while condition:
+    // code;                                                                # code
+}
+
+
+do {                                                                    not available
+    // code;
+} while (condition);
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Functions:
+JavaScript                                                              Python
+function <functionName>(para1, para2, ...) {                            def function_name(para1, para2, ...):
+    // code;                                                                # code
+}
+
+It's not necessary to pass the same number of arguments to the          The number of arguments passed to the function call must be the
+function call. Any missing arguments will be assigned the value         same number of parameters defined in the function definition.
+'undefined' by default, whereas extra arguments can be accessed         Otherwise, this will raise a TypeError.
+with the 'arguments' object.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Object-Oriented Programming:
+JavaScript                                                              Python
+class NewClass {                                                        class NewClass:
+    constructor(attribute1, attribute2, ...) {                              def __init__(self, attribute1, attribute2, ...):
+        this.attribute1 = attribute1;                                           self.attribute1 = attribute1
+        this.attribute2 = attribute2;                                           self.attribute2 = attribute2
+    }
+                                                                            def method1(self):
+    method1() {                                                                 return <code>
+        return <code>;
+    }
+}
+
+To create instances of a class:
+myClass = new NewClass(arg1, arg2, ...);                                my_class = NewClass(arg1, arg2, ...)
