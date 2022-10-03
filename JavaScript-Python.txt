@@ -9,8 +9,9 @@ NaN -> operating numbers with non-numbers data type                     TypeErro
 boolean -> true / false                                                 bool -> True / False
 null -> the value of no value                                           None
 undefined -> the absence of value                                       None
-array                                                                   range -> for numbers / list -> for items
+array                                                                   list
 object                                                                  dict
+not available                                                           range
 not available                                                           tuple
 
 -------------------------------------------------------------------------------------------------------------------------------------------
@@ -51,11 +52,41 @@ Math.floor(a / b)                                                       a // b
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-Commands:
+Built-In Functions:
 JavaScript                                                              Python
-console.log(<output>) -> debug console                                  print(<output>)
+console.log(<output>) -> debug console                                  print(<output>) -> terminal
 alert(<output>) -> display a small prompt on a browser                  not available
 typeof <instance>                                                       type(<instance>)
+                                                                        isinstance(<a>, <datatype>)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+String Methods:
+JavaScript                                                              Python
+string.toUpperCase()                                                    str.upper()
+string.toLowerCase()                                                    str.lower()
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Array/List Methods:
+JavaScript                                                              Python
+array.map(mappingFunction);                                             map(list, mapping_function)
+array.filter(filterFunction);
+array1.concat(array2);                                                  list1.extend(list2)
+array.slice(<startIndex df:0>, <endIndex df:0>);
+array.splice(<index>, <howmany df:0>, <item1>, ..., <itemX>)
+array.join(<separator df:,>)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Falsy Values:
+JavaScript                                                              Python
+false                                                                   False
+0, 0.0, -0, -0.0, 0n                                                    0, 0.0, 0j
+"", '', ``                                                              "", '', '''''', [], (), {}, set(), range(0)
+null, undefined, NaN                                                    None
+
+Important note: Empty arrays and empty objects are true in JavaScript
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,9 +111,33 @@ switch (expression) {                                                   not avai
         // code;
 }
 
+var/let/const <a> = <condition> ? <exprIfTrue> : <exprIfFalse>;         <a> = <exprIfTrue> if <condition> else <exprIfFalse>
+
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-Loops:
+Conditional Statements:
+JavaScript                                                              Python
+In JavaScript, conditional statements cannot be chained using           Conditional statements in Python work just like statements in
+more than 1 logic operator. Otherwise, it will interpret the            mathematics and can be chained together. Example:
+statement incorrectly. Example:
+                                                                        number = 100
+let number = 100;                                                       print(bool(5 < number < 10))
+console.log(Boolean(5 < number < 10));                                  # returns False
+// console.log(Boolean(5 < 100 < 10));
+// console.log(Boolean(true < 10));
+// console.log(Boolean(1 < 10));
+// returns true
+
+To make the statement working correctly, the statement needs to be
+separated by adding a logic operator. Example:
+
+let number = 100;
+console.log(Boolean(5 < number && number < 10));
+// returns false
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+For Loops:
 JavaScript                                                              Python
 for (var/let i = 0; i < n; i++) {                                       for i in range(n):
     // code;                                                                # code
@@ -95,19 +150,20 @@ for (var/let i of <iterable object>) {                                  for i in
 
 // Example:
 for (let i of [4, 5, 6]) {
-    console.log(i); // logs "4", "5", "6"
-}
+    console.log(i);
+} -> logs "4", "5", "6"
 
 
-for (var/let i in <iterable object>) {
-    // code;
+for (var/let i in <iterable object>) {                                  for i in dict.keys():
+    // code;                                                                # code
 } -> iterates over properties
-
-// Example:
+                                                                        # The code above is only available for dict. To access properties
+// Example:                                                             # (index) of a list, the equivalent code is:
 for (let i in [4, 5, 6]) {
-    console.log(i); // logs "0", "1", "2"
-}
+    console.log(i);                                                     for i in range(len(list)):
+} -> logs "0", "1", "2"                                                     # code
 
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 while (condition) {                                                     while condition:
     // code;                                                                # code
